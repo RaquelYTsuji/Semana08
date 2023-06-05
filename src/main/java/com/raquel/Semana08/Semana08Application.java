@@ -1,5 +1,6 @@
 package com.raquel.Semana08;
 
+import com.raquel.Semana08.enums.Category;
 import com.raquel.Semana08.model.Course;
 import com.raquel.Semana08.repository.CourseRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -20,8 +21,8 @@ public class Semana08Application {
 			courseRepository.deleteAll();
 
 			Course c = new Course();
-			c.setName("Angular com Spring");
-			c.setCategory("Front-end");
+			c.setName("Spring");
+			c.setCategory(Category.BACK_END);
 
 			courseRepository.save(c);
 		};
