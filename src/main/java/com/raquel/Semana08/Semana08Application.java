@@ -2,6 +2,7 @@ package com.raquel.Semana08;
 
 import com.raquel.Semana08.enums.Category;
 import com.raquel.Semana08.model.Course;
+import com.raquel.Semana08.model.Lesson;
 import com.raquel.Semana08.repository.CourseRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,12 @@ public class Semana08Application {
 			Course c = new Course();
 			c.setName("Spring");
 			c.setCategory(Category.BACK_END);
+
+			Lesson l = new Lesson();
+			l.setName("Introdução");
+			l.setYoutubeUrl("watch?v=1");
+			l.setCourse(c);
+			c.getLessons().add(l);
 
 			courseRepository.save(c);
 		};
